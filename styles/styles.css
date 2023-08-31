@@ -1,0 +1,16 @@
+@import url("./global/reset.css");
+@import url("./global/typography.css");
+@import url("./global/colors.css");
+@import url("./global/layout.css");
+@import url("./global/utils.css");
+@import url("./global/utils_container.css");
+@import url("./global/button.css");
+@import url("./global/input.css");
+/* Components */
+@import url("./components/header.css");
+
+/* * {
+  border: 1px solid rgb(177, 184, 181);
+  margin: 5px;
+  padding: 5px;
+} */

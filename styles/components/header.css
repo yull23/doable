@@ -1,0 +1,43 @@
+.header {
+  background-color: var(--gray-200);
+  padding: 0.25rem;
+}
+
+.header__container {
+  max-width: 572px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+}
+
+.logo {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: bold;
+  color: var(--gray-500);
+}
+
+.logo__edit {
+  color: var(--pink-500);
+  margin: 0;
+  padding: 0;
+}
+
+.header__space {
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.header__logout {
+  height: 1.2rem;
+  display: none;
+}
+
+.active {
+  display: block;
+}
