@@ -1,0 +1,36 @@
+.content-form {
+  margin: 8rem 1rem;
+  max-width: 572px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form__submit {
+  width: 100%;
+  background-color: var(--pink-500);
+  color: white;
+}
+.form__label {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.link-create {
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--pink-400);
+}

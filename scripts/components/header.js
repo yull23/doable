@@ -1,4 +1,4 @@
-export function render(active = "active") {
+export function header(active = "active") {
   return `
   <header class="header">
     <div class="header__container">
