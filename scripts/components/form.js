@@ -7,7 +7,7 @@ export function form(page = "login") {
   return `
       <main>
         <div class="content-form">
-          <form action="" class="form">
+          <form action="" class="form" id="${page}-form">
             <div class="form__container">
               <label for="" class="form__label">email</label>
               <input

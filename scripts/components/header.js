@@ -18,12 +18,12 @@ export function header(active = "active") {
   `;
 }
 
-const Header = {
-  toString() {
-    return render();
-  },
-  addListeners() {
-    // listen();
-  },
-};
-export { Header };
+// const Header = {
+//   toString() {
+//     return render();
+//   },
+//   addListeners() {
+//     // listen();
+//   },
+// };
+// export { Header };
