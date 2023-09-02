@@ -1,5 +1,7 @@
 .content-form {
-  margin: 8rem 1rem;
+  margin: 8rem auto;
+  padding: 1rem;
+
   max-width: 572px;
   display: flex;
   flex-direction: column;

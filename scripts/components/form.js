@@ -1,4 +1,4 @@
-export function form(page = "login") {
+export function formRender(page = "login") {
   let data = {
     login: ["submit-login", "login", "link-create", "create count"],
     signup: ["submit-create", "create count", "link-login", "signup"],
@@ -40,12 +40,12 @@ export function form(page = "login") {
   `;
 }
 
-// const Form = {
-//   toString() {
-//     return render();
-//   },
-//   addListeners() {
-//     // listen();
-//   },
-// };
-// export { Form };
+const Form = {
+  toString() {
+    return render();
+  },
+  addListeners() {
+    // listen();
+  },
+};
+export { Form };

@@ -101,3 +101,35 @@ h6 {
 .fw-normal {
   font-weight: normal;
 }
+
+.fs-025 {
+  font-size: 0.25rem;
+}
+
+.fs-050 {
+  font-size: 0.5rem;
+}
+
+.fs-075 {
+  font-size: 0.75rem;
+}
+
+.fs-100 {
+  font-size: 1rem;
+}
+
+.fs-125 {
+  font-size: 1.25rem;
+}
+
+.fs-150 {
+  font-size: 1.5rem;
+}
+
+fs-175 {
+  font-size: 1.75rem;
+}
+
+fs-200 {
+  font-size: 2rem;
+}

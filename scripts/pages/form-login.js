@@ -1,9 +1,17 @@
 import { tokenKey } from "../config.js";
 import { loginUser } from "../services/session-service.js";
-import { form } from "./form.js";
-import { header } from "./header.js";
+import { formRender } from "../components/form.js";
+import { header } from "../components/header.js";
+import { listTasks } from "../services/task-service.js";
+import STORE from "../store.js";
+import DOMHandler from "../dom-handler.js";
+import { HomePage } from "./home.js";
 
-const submitCredential = function () {
+const render = function () {
+  return header() + formRender();
+};
+
+const listenSubmitForm = function () {
   const form = document.querySelector("#login-form");
   form.addEventListener("submit", async (event) => {
     try {
@@ -14,18 +22,20 @@ const submitCredential = function () {
         password: elements[1].value,
       };
       const user = await loginUser(credentialsForm);
-      console.log(user);
+      STORE.user = user;
+      await STORE.getTaskList();
+      DOMHandler.load(HomePage);
     } catch (error) {}
   });
 };
 
 const FormLogin = {
   toString() {
-    return header() + form();
+    return render();
   },
   addListeners() {
     // listen();
-    submitCredential();
+    listenSubmitForm();
   },
 };
 export { FormLogin };
