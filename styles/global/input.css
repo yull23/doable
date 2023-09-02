@@ -14,13 +14,18 @@
   color: var(--gray-500);
 }
 
-.input:focus,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-field {
+  /* Establece el color del texto en los campos de edición */
+  color: var(--gray-500); /* Cambia el color del texto a rojo */
+}
+
+/* .input:focus, */
 .select:focus {
   outline: none;
   border: 1px solid var(--gray-700);
   box-shadow: 0px 0px 0px 3px #60a5fa;
 }
-
 .input:invalid {
   border: 1px solid var(--red-500);
   box-shadow: 0px 0px 4px var(--red-500);

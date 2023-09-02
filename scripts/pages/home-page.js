@@ -1,9 +1,14 @@
+import { FormAddTask } from "../components/form-add-task.js";
 import { header } from "../components/header.js";
 import { Tasks } from "../components/tasks.js";
 import STORE from "../store.js";
 
 const render = function () {
-  return header("active") + Tasks;
+  return `
+  <main>
+  ${header("active") + Tasks + FormAddTask}
+  </main>
+  `;
 };
 
 const HomePage = {
@@ -13,6 +18,7 @@ const HomePage = {
   addListeners() {
     // listen();
     Tasks.addListeners();
+    FormAddTask.addListeners();
   },
 };
 export { HomePage };

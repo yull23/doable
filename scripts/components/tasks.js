@@ -1,5 +1,5 @@
-import DOMHandler from "../dom-handler.js";
 import { editTask } from "../services/task-service.js";
+import DOMHandler from "../dom-handler.js";
 import STORE from "../store.js";
 
 function renderTask(task) {
@@ -52,15 +52,11 @@ function listenChangesImportance() {
       await STORE.getTaskList();
       DOMHandler.reload();
     }
-
-    // if (event.target.type == "checkbox") {
-    //   const statusCompleted = event.target.dataset.completed;
-    // }
   });
 }
 
 function render() {
-  const tasks = STORE.currentTasks();
+  const tasks = STORE.listTasks;
   return `
   <div class="home__list-tasks container">
     <ul class="home__tasks js-list-tasks">

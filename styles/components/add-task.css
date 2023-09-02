@@ -1,0 +1,24 @@
+.home__form {
+}
+
+.form-task {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-task__input {
+  border: 1px solid var(--gray-300);
+}
+
+.form-task__input:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px #60a5fa;
+}
+
+.form-task__submit {
+  background-color: var(--pink-500);
+  line-height: 1.5;
+  color: white;
+  font-weight: 500;
+}

@@ -5,14 +5,9 @@ async function getTaskList() {
   this.listTasks = tasks;
 }
 
-function currentTasks() {
-  return this.listTasks;
-}
-
 const STORE = {
   listTasks: [],
   getTaskList,
-  currentTasks,
 };
 
 export default STORE;

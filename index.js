@@ -74,9 +74,9 @@ async function init() {
     await STORE.getTaskList();
     DOMHandler.load(HomePage);
   } catch (error) {
-    // console.log(error);
-    // sessionStorage.removeItem(tokenKey);
-    // DOMHandler.load(LoginPage);
+    console.log(error);
+    sessionStorage.removeItem(tokenKey);
+    DOMHandler.load(LoginPage);
   }
 }
 init();
@@ -90,5 +90,3 @@ init();
 //   },
 // };
 // export { Module };
-
-// data
