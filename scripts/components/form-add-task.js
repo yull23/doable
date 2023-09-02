@@ -23,7 +23,6 @@ function render() {
 
 function listSubmitForm() {
   const form = document.querySelector(".form-task");
-  console.log(form);
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const title = event.target.elements[0].value;

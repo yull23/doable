@@ -8,6 +8,7 @@ function renderTask(task) {
     completedImportant: "#F9A8D4",
     important: "#EC4899",
   };
+  let importantStatus = task.important ? "important" : "";
   let completedStatus = task.completed ? "completed" : "";
   let checkedStatus = task.completed ? "checked" : "";
   let color = colors.default;
@@ -16,7 +17,7 @@ function renderTask(task) {
   if (!task.completed && task.important) color = colors.important;
 
   return `
-  <li class="task" data-id="${task.id}">
+  <li class="task" data-id="${task.id} ">
     <div class="task__checkbox">
       <input type="checkbox" data-id="${task.id}"  data-completed="${task.completed}" class="checkbox__input" ${checkedStatus}/>
     </div>
@@ -57,6 +58,7 @@ function listenChangesImportance() {
 
 function render() {
   const tasks = STORE.listTasks;
+  console.log(tasks);
   return `
   <div class="home__list-tasks container">
     <ul class="home__tasks js-list-tasks">

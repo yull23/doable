@@ -1,0 +1,39 @@
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+.form-actions__container {
+  display: flex;
+  align-items: center;
+}
+
+.form-actions__label {
+  width: 5rem;
+}
+.form-actions__actions-sort {
+  width: 100%;
+  line-height: 1;
+  border: 1px solid var(--gray-300);
+}
+
+.form-actions__actions-sort:focus {
+  box-shadow: 0px 0px 4px var(--info);
+}
+
+.form-actions__actions-show {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-actions__block-input {
+  display: flex;
+  width: 100%;
+}
+
+.form-actions__checkbox {
+  margin-right: 1rem;
+  margin-left: 0;
+}

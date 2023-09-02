@@ -13,6 +13,7 @@ const render = function () {
 
 const HomePage = {
   toString() {
+    // console.log(typeof STORE.listTasks[0].important);
     return render();
   },
   addListeners() {

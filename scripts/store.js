@@ -3,10 +3,16 @@ import { listTasks } from "./services/task-service.js";
 async function getTaskList() {
   const tasks = await listTasks();
   this.listTasks = tasks;
+  const pendingTask = tasks.filter((element) => element.completed);
+  this.pendingTask = pendingTask;
+  const importantTask = tasks.filter((element) => element.important);
+  this.importantTask = importantTask;
 }
 
 const STORE = {
   listTasks: [],
+  importantTask: [],
+  pendingTask: [],
   getTaskList,
 };
 

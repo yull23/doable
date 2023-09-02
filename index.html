@@ -25,8 +25,46 @@
         </div>
       </header>
       <main>
-        <div class="home__header container"></div>
-        <!-- <div class="home__list-tasks container">
+        <div class="home__header container">
+          <form action="" class="form-actions">
+            <div class="form-actions__container">
+              <label for="" class="form-actions__label">Sort</label>
+              <select
+                id="opciones"
+                name="opciones"
+                class="form-actions__actions-sort select"
+              >
+                <option value="option1" selected>Alphabetical (a-z)</option>
+                <option value="option2">Dua date</option>
+                <option value="option3">Importance</option>
+              </select>
+            </div>
+            <div class="form-actions__container">
+              <label for="" class="form-actions__label">Show</label>
+              <div class="form-actions__actions-show">
+                <div class="form-actions__block-input">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    class="form-actions__checkbox checkbox__input"
+                  />
+                  <label for="">Only pending</label>
+                </div>
+                <div class="form-actions__block-input">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    class="form-actions__checkbox checkbox__input"
+                  />
+                  <label for="">Only important</label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="home__list-tasks container">
           <ul class="home__tasks">
             <li class="task">
               <div class="task__checkbox">
@@ -65,7 +103,7 @@
               </div>
             </li>
           </ul>
-        </div> -->
+        </div>
         <div class="home__form container">
           <form action="" class="form-task js-form-task">
             <input
@@ -82,6 +120,6 @@
       </main>
     </div>
     <!-- Happy coding! -->
-    <script type="module" src="index.js"></script>
+    <!-- <script type="module" src="index.js"></script> -->
   </body>
 </html>

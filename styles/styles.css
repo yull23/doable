@@ -13,6 +13,7 @@
 @import url("./components/form.css");
 @import url("./components/list-tasks.css");
 @import url("./components/add-task.css");
+@import url("./components/actions-task.css");
 
 * {
   /* border: 1px solid rgb(177, 184, 181); */
