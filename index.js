@@ -5,19 +5,20 @@ import { loginUser, logoutUser } from "./scripts/services/session-service.js";
 import { HomePage } from "./scripts/pages/home.js";
 import STORE from "./scripts/store.js";
 import { Tasks } from "./scripts/components/tasks.js";
-let credentials = { email: "yull.timoteo.z@uni.pe", password: "yull23" };
+import { createUser, deleteUser } from "./scripts/services/user-service.js";
+const credentials = { email: "yull.timoteo.z@uni.pe", password: "yull23" };
+const newCredentials = { email: "yull_6.timoteo.z@uni.pe", password: "yull23" };
 
 async function init() {
   try {
     const token = sessionStorage.getItem(tokenKey);
-    if (!token) return DOMHandler.load(FormLogin);
-    console.log("Is at Home");
-    await STORE.getTaskList();
-    // DOMHandler.load(HomePage);
-    DOMHandler.load(Tasks);
+    const newUser = await createUser(newCredentials);
+    await deleteUser();
 
-    // const user = await loginUser(credentials);
-    // console.log(user);
+    // if (!token) return DOMHandler.load(FormLogin);
+    // console.log("Is at Home");
+    // await STORE.getTaskList();
+    // DOMHandler.load(Tasks);
   } catch (error) {
     // console.log(error);
     // sessionStorage.removeItem(tokenKey);

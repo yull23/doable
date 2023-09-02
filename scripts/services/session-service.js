@@ -7,7 +7,7 @@ export async function loginUser(credentials = { email, password }) {
   // body = {"email": "yull.timoteo.z@uni.pe","password": "yull23"}
   // header = {Content-Type: application/json}
   // Como es una solicitud que envia un body, solo es necesario incluir esta
-  const { token } = await apiFetch("/login", { body: credentials });
+  const { token } = await apiFetch("login", { body: credentials });
   // apiFetch(endPoint,{ method, headers, body } = {});
   // console.log(user);
   sessionStorage.setItem(tokenKey, token);
@@ -20,7 +20,7 @@ export async function logoutUser() {
   // body =
   // header = {Content-Type: application/json}
   // Como es una solicitud que envia un body, solo es necesario incluir esta
-  await apiFetch("/logout", { method: "DELETE" });
+  await apiFetch("logout", { method: "DELETE" });
   // apiFetch(endPoint,{ method, headers, body } = {});
   sessionStorage.removeItem(tokenKey);
 }
