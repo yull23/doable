@@ -39,7 +39,6 @@
   font-weight: 600;
 }
 .task__date {
-  /* display: none; */
   font-size: 14px;
   line-height: 1.25;
 }
@@ -52,4 +51,20 @@
 }
 .task__content .completed {
   color: var(--gray-300);
+}
+
+/* Icons */
+.task__important-default,
+.task__important-completed,
+.task__important-active {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.task__date .completed {
+  font-size: 14px;
+  line-height: 1.25;
 }

@@ -2,7 +2,8 @@ import apiFetch from "./api-fetch.js";
 
 export function listTasks() {
   return apiFetch("/tasks");
-  // Retorno :
+  // Return :
+
   // [
   // 	{
   // 		"id": 931,
@@ -20,7 +21,9 @@ export function listTasks() {
 export function showTask(id) {
   return apiFetch(`tasks/${id}`);
   // Entrada de showTask(contentEdit) segun API es el ID
+
   // Retorno :
+
   // {
   // 	"id": 931,
   // 	"title": "Edited",
@@ -35,12 +38,14 @@ export function showTask(id) {
 
 export function createTask(task) {
   return apiFetch("tasks", { body: task });
-  // Entrada de createTask(task) segun API
-  // const newTask = {
+  // Entrada segun API
+
+  // {
   //   title: "New task",
   //   due_date: "2021-09-30",
   // };
-  /// Retorno de createTask()=>
+
+  /// Retorno
 
   // {
   // 	"id": 1080,
@@ -56,7 +61,8 @@ export function createTask(task) {
 
 export function editTask(id, contentEdit) {
   return apiFetch(`tasks/${id}`, { method: "PATCH", body: contentEdit });
-  // Entrada de editTask(contentEdit) segun API
+  // Entrada segun API
+
   // {
   // 	"title": "Edited",
   // 	"due_date": "2021-10-01",
@@ -64,7 +70,7 @@ export function editTask(id, contentEdit) {
   // 	"completed": true
   // }
 
-  /// Retorno de editTask()=>
+  /// Retorno
 
   // {
   // 	"user_id": 216,
@@ -80,6 +86,6 @@ export function editTask(id, contentEdit) {
 
 export function deleteTask(id) {
   apiFetch(`tasks/${id}`, { method: "DELETE" });
-  // Entrada de deleteTask(contentEdit) segun API es el ID
-  /// la función retorna el estado 204.
+  // Entrada segun API es el ID
+  // la función retorna el estado 204.
 }

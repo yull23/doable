@@ -1,4 +1,4 @@
-export function header(active = "active") {
+export function header(active = "") {
   return `
   <header class="header">
     <div class="header__container">

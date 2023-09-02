@@ -6,11 +6,10 @@ async function getTaskList() {
 }
 
 function currentTasks() {
-  return this[this.listTasks];
+  return this.listTasks;
 }
 
 const STORE = {
-  user: null,
   listTasks: [],
   getTaskList,
   currentTasks,

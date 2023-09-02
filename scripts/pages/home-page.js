@@ -1,8 +1,9 @@
 import { header } from "../components/header.js";
 import { Tasks } from "../components/tasks.js";
+import STORE from "../store.js";
 
 const render = function () {
-  return header() + Tasks;
+  return header("active") + Tasks;
 };
 
 const HomePage = {
@@ -11,6 +12,7 @@ const HomePage = {
   },
   addListeners() {
     // listen();
+    Tasks.addListeners();
   },
 };
 export { HomePage };
