@@ -4,6 +4,7 @@ import DOMHandler from "./scripts/dom-handler.js";
 import { loginUser, logoutUser } from "./scripts/services/session-service.js";
 import { HomePage } from "./scripts/pages/home.js";
 import STORE from "./scripts/store.js";
+import { Tasks } from "./scripts/components/tasks.js";
 let credentials = { email: "yull.timoteo.z@uni.pe", password: "yull23" };
 
 async function init() {
@@ -12,7 +13,8 @@ async function init() {
     if (!token) return DOMHandler.load(FormLogin);
     console.log("Is at Home");
     await STORE.getTaskList();
-    DOMHandler.load(HomePage);
+    // DOMHandler.load(HomePage);
+    DOMHandler.load(Tasks);
 
     // const user = await loginUser(credentials);
     // console.log(user);
@@ -33,3 +35,5 @@ init();
 //   },
 // };
 // export { Module };
+
+// data

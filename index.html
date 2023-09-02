@@ -9,18 +9,14 @@
   </head>
   <body>
     <div id="root">
-      <header class="header">
+      <!-- <header class="header">
         <div class="header__container">
           <div class="header__space"></div>
           <div class="header__logo">
             <span class="logo">{ do<span class="logo__edit">able</span> }</span>
           </div>
           <div class="header__space">
-            <img
-              src="assets/icon-block.svg"
-              alt=""
-              class="header__logout ${active}"
-            />
+            <img src="assets/icon-block.svg" alt="" class="header__logout" />
           </div>
         </div>
       </header>
@@ -37,21 +33,38 @@
                 <div class="task__header">
                   <label for="1" class="task__body">Task title!</label>
                   <img
-                    src="/assets/icon-alert-desactive.svg"
-                    alt="icon-alert-desactive"
-                    class="task__alert"
+                    src="/assets/icon-important.svg"
+                    alt="icon-important"
+                    class="task__important"
                   />
                 </div>
                 <p class="task__date">Friday, October 01</p>
               </div>
             </li>
-            <!-- <img src="/assets/icon-alert.svg" alt="icon-alert" /> -->
-            <!-- <img src="/assets/icon-alert-active.svg" alt="icon-alert-active" /> -->
+            <li class="task">
+              <div class="task__checkbox">
+                <input type="checkbox" id="1" class="checkbox__input" />
+              </div>
+
+              <div class="task__content">
+                <div class="task__header">
+                  <label for="1" class="task__body completed"
+                    >Task title!</label
+                  >
+                  <img
+                    src="/assets/icon-important-completed.svg"
+                    alt="icon-important-completed"
+                    class="task__important"
+                  />
+                </div>
+                <p class="task__date completed">Friday, October 01</p>
+              </div>
+            </li>
           </ul>
         </div>
-      </main>
+      </main> -->
     </div>
     <!-- Happy coding! -->
-    <!-- <script type="module" src="index.js"></script> -->
+    <script type="module" src="index.js"></script>
   </body>
 </html>
