@@ -1,12 +1,13 @@
 import { FormAddTask } from "../components/form-add-task.js";
 import { header } from "../components/header.js";
+import { TaskActions } from "../components/task-actions.js";
 import { Tasks } from "../components/tasks.js";
 import STORE from "../store.js";
 
 const render = function () {
   return `
   <main>
-  ${header("active") + Tasks + FormAddTask}
+  ${header("active") + TaskActions + Tasks + FormAddTask}
   </main>
   `;
 };
@@ -20,6 +21,7 @@ const HomePage = {
     // listen();
     Tasks.addListeners();
     FormAddTask.addListeners();
+    TaskActions.addListeners();
   },
 };
 export { HomePage };

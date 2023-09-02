@@ -2,6 +2,42 @@ import { editTask } from "../services/task-service.js";
 import DOMHandler from "../dom-handler.js";
 import STORE from "../store.js";
 
+function formatDate(inputDate) {
+  const date = new Date(inputDate);
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const dayOfWeek = daysOfWeek[date.getUTCDay()];
+  const month = months[date.getUTCMonth()];
+  const day = date.getUTCDate();
+
+  const formattedDate = `${dayOfWeek}, ${month} ${day < 10 ? "0" : ""}${day}`;
+
+  return formattedDate; // "Saturday, October 01"
+}
+
 function renderTask(task) {
   let colors = {
     default: "#d1d5db",
@@ -19,16 +55,24 @@ function renderTask(task) {
   return `
   <li class="task" data-id="${task.id} ">
     <div class="task__checkbox">
-      <input type="checkbox" data-id="${task.id}"  data-completed="${task.completed}" class="checkbox__input" ${checkedStatus}/>
+      <input type="checkbox" data-id="${task.id}"  data-completed="${
+    task.completed
+  }" class="checkbox__input" ${checkedStatus}/>
     </div>
     <div class="task__content">
       <div class="task__header">
-        <label for="${task.id}" class="task__body ${completedStatus}" data-completed="${task.completed}" data-id="${task.id}" >${task.title}</label>
+        <label for="${
+          task.id
+        }" class="task__body ${completedStatus}" data-completed="${
+    task.completed
+  }" data-id="${task.id}" >${task.title}</label>
         <div class="task__icon">
-          <i class='bx bxs-error-circle bx-sm' style='color:${color}'  data-id="${task.id}" data-completed="${task.completed}" data-important="${task.important}"></i>
+          <i class='bx bxs-error-circle bx-sm' style='color:${color}'  data-id="${
+    task.id
+  }" data-completed="${task.completed}" data-important="${task.important}"></i>
           </div>
         </div>
-      <p class="task__date ${completedStatus}">${task.due_date}</p>
+      <p class="task__date ${completedStatus}">${formatDate(task.due_date)}</p>
     </div>
   </li>
   `;
@@ -58,7 +102,7 @@ function listenChangesImportance() {
 
 function render() {
   const tasks = STORE.listTasks;
-  console.log(tasks);
+  // console.log(tasks);
   return `
   <div class="home__list-tasks container">
     <ul class="home__tasks js-list-tasks">

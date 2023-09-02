@@ -41,6 +41,7 @@
 .task__date {
   font-size: 14px;
   line-height: 1.25;
+  color: var(--gray-500);
 }
 
 /* END Task */
