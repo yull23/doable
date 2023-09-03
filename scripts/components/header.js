@@ -10,7 +10,7 @@ export function header(active = "") {
         <img
           src="assets/icon-block.svg"
           alt=""
-          class="header__logout ${active}"
+          class="header__logout js-${active}"
         />
       </div>
     </div>

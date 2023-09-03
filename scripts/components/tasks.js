@@ -44,7 +44,6 @@ function renderTask(task) {
     completedImportant: "#F9A8D4",
     important: "#EC4899",
   };
-  let importantStatus = task.important ? "important" : "";
   let completedStatus = task.completed ? "completed" : "";
   let checkedStatus = task.completed ? "checked" : "";
   let color = colors.default;
@@ -143,6 +142,7 @@ function listenShowOnly() {
     if (checkedDefault == "option1") option1.checked = true;
     if (checkedDefault == "option2") option2.checked = true;
   }
+  STORE.listTasks = [...STORE.listTasksTemporal];
   checkbox.addEventListener("change", (event) => {
     const value = event.target.value;
     if (value == undefined) {

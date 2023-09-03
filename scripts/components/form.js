@@ -1,8 +1,11 @@
+import { LoginPage } from "../pages/login-page.js";
+
 export function formRender(page = "login") {
   let data = {
     login: ["submit-login", "login", "link-create", "create count"],
-    signup: ["submit-create", "create count", "link-login", "signup"],
+    signup: ["submit-create", "create count", "link-login", "login"],
   };
+  const { loginError } = LoginPage.state;
 
   return `
       <main>
@@ -28,12 +31,15 @@ export function formRender(page = "login") {
                 required
               />
             </div>
+            ${loginError ? `<p class="form__error">${loginError}</p>` : ""}
             <div>
-              <button class="form__submit button" id="${data[page][0]}">
+              <button class="form__submit button js-${data[page][0]}">
                 ${data[page][1]}
               </button>
             </div>
-            <a href="#" class="link-create" id="${data[page][2]}">${data[page][3]}</a>
+            <a href="#" class="link-create js-${data[page][2]}">${
+    data[page][3]
+  }</a>
           </form>
         </div>
       </main>

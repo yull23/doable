@@ -38,6 +38,6 @@
   display: none;
 }
 
-.active {
+.js-active {
   display: block;
 }

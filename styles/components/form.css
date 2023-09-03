@@ -36,3 +36,7 @@
   font-weight: 500;
   color: var(--pink-400);
 }
+.form__error {
+  color: rgb(97, 104, 132);
+  font-weight: bold;
+}
