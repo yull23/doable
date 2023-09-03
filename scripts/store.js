@@ -2,6 +2,8 @@ import { listTasks } from "./services/task-service.js";
 
 async function getTaskList() {
   const tasks = await listTasks();
+  tasks.sort((a, b) => a.title.localeCompare(b.title));
+
   this.listTasks = tasks;
   const pendingTask = tasks.filter((element) => element.completed);
   this.pendingTask = pendingTask;

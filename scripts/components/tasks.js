@@ -100,8 +100,37 @@ function listenChangesImportance() {
   });
 }
 
+function listenSortTasks() {
+  const form = document.querySelector(".form-actions__actions-sort");
+  if (localStorage.getItem("selectedOption")) {
+    form.value = localStorage.getItem("selectedOption");
+  } else {
+    form.value = "option1";
+  }
+  form.addEventListener("change", (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+
+    if (event.target.value == "option1") {
+      STORE.listTasks.sort((a, b) => a.title.localeCompare(b.title));
+    }
+    if (event.target.value == "option2") {
+      STORE.listTasks.sort((a, b) => a.due_date.localeCompare(b.due_date));
+    }
+    if (event.target.value == "option3") {
+      STORE.listTasks.sort((a, b) =>
+        a.important.toString().localeCompare(b.important.toString())
+      );
+    }
+
+    form.value = localStorage.setItem("selectedOption", event.target.value);
+    DOMHandler.reload();
+  });
+}
+
 function render() {
   const tasks = STORE.listTasks;
+
   // console.log(tasks);
   return `
   <div class="home__list-tasks container">
@@ -117,6 +146,7 @@ const Tasks = {
   },
   addListeners() {
     // listen();
+    listenSortTasks();
     listenChangesImportance();
   },
 };

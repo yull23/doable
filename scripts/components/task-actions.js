@@ -1,3 +1,7 @@
+import STORE from "../store.js";
+
+function listenInit() {}
+
 function render() {
   return `
           <div class="home__header container">
@@ -5,11 +9,11 @@ function render() {
             <div class="form-actions__container">
               <label for="" class="form-actions__label">Sort</label>
               <select
-                id="opciones"
-                name="opciones"
+                id="options"
+                name="options"
                 class="form-actions__actions-sort select"
               >
-                <option value="option1" selected>Alphabetical (a-z)</option>
+                <option value="option1">Alphabetical (a-z)</option>
                 <option value="option2">Dua date</option>
                 <option value="option3">Importance</option>
               </select>
@@ -42,20 +46,13 @@ function render() {
   `;
 }
 
-function listenActionSort() {
-  const form = document.querySelector(".form-actions__actions-sort");
-  form.addEventListener("change", (event) => {
-    console.log(event);
-  });
-}
-
 const TaskActions = {
   toString() {
     return render();
   },
   addListeners() {
     // listen();
-    listenActionSort();
+    listenInit();
   },
 };
 export { TaskActions };
