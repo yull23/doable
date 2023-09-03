@@ -1,12 +1,12 @@
-.form-actions {
+.home__header {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  font-weight: 500;
 }
 .form-actions__container {
   display: flex;
   align-items: center;
+  font-weight: 500;
 }
 
 .form-actions__label {

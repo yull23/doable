@@ -79,6 +79,7 @@ function renderTask(task) {
 }
 
 function listenChangesImportance() {
+  // STORE.listTasks = [...STORE.listTasksTemporal];
   const tasksContainer = document.querySelector(".js-list-tasks");
   tasksContainer.addEventListener("click", async (event) => {
     if (event.target.classList[0] == "bx") {
@@ -102,14 +103,14 @@ function listenChangesImportance() {
 
 function listenSortTasks() {
   const form = document.querySelector(".form-actions__actions-sort");
-  if (localStorage.getItem("selectedOption")) {
-    form.value = localStorage.getItem("selectedOption");
+  if (localStorage.getItem("selectedOptionCheckbox")) {
+    form.value = localStorage.getItem("selectedOptionCheckbox");
   } else {
     form.value = "option1";
   }
   form.addEventListener("change", (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+    // console.log(event.target.value);
 
     if (event.target.value == "option1") {
       STORE.listTasks.sort((a, b) => a.title.localeCompare(b.title));
@@ -123,7 +124,37 @@ function listenSortTasks() {
       );
     }
 
-    form.value = localStorage.setItem("selectedOption", event.target.value);
+    form.value = localStorage.setItem(
+      "selectedOptionCheckbox",
+      event.target.value
+    );
+    DOMHandler.reload();
+  });
+}
+
+function listenShowOnly() {
+  // console.log(STORE.importantTask);
+  const checkbox = document.querySelector(".js-only-view");
+  const option1 = document.querySelector(".js-input-pending");
+  const option2 = document.querySelector(".js-input-important");
+  const checkedDefault = localStorage.getItem("selectedOptionRatio");
+
+  if (checkedDefault) {
+    if (checkedDefault == "option1") option1.checked = true;
+    if (checkedDefault == "option2") option2.checked = true;
+  }
+  checkbox.addEventListener("change", (event) => {
+    const value = event.target.value;
+    if (value == undefined) {
+      STORE.listTasks = [...STORE.listTasksTemporal];
+    }
+    if (value == "option1") {
+      STORE.listTasks = [...STORE.pendingTask];
+    }
+    if (value == "option2") {
+      STORE.listTasks = [...STORE.importantTask];
+    }
+    localStorage.setItem("selectedOptionRatio", value);
     DOMHandler.reload();
   });
 }
@@ -148,6 +179,7 @@ const Tasks = {
     // listen();
     listenSortTasks();
     listenChangesImportance();
+    listenShowOnly();
   },
 };
 export { Tasks };

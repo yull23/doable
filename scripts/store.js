@@ -5,6 +5,7 @@ async function getTaskList() {
   tasks.sort((a, b) => a.title.localeCompare(b.title));
 
   this.listTasks = tasks;
+  this.listTasksTemporal = tasks;
   const pendingTask = tasks.filter((element) => element.completed);
   this.pendingTask = pendingTask;
   const importantTask = tasks.filter((element) => element.important);
@@ -13,6 +14,7 @@ async function getTaskList() {
 
 const STORE = {
   listTasks: [],
+  listTasksTemporal: [],
   importantTask: [],
   pendingTask: [],
   getTaskList,
