@@ -142,7 +142,6 @@ function listenShowOnly() {
     if (checkedDefault == "option1") option1.checked = true;
     if (checkedDefault == "option2") option2.checked = true;
   }
-  STORE.listTasks = [...STORE.listTasksTemporal];
   checkbox.addEventListener("change", (event) => {
     const value = event.target.value;
     if (value == undefined) {
